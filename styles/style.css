@@ -32,26 +32,35 @@ body {
 }
 /* 메인 */
 .main {
-  background-color:peru;
-  height: 50vh;
+  background-color:WhiteSmoke;
+  /* height: 50vh; */ 
+  min-height: 450px; 
   display: flex;
-  flex-direction: row; 
+  flex-flow: row nowrap;
+  justify-content: space-between;
   align-items: flex-start;
+  padding: 30px;
 }
 
 .group1 {
   background-color: blueviolet;
-  /* width: 250px; */
+  width: 250px;
+  
 }
 
 .group2 {
   background-color: seagreen;
-  /* width: 380px; */
+  width: 380px;
+  
 }
 
 .group3 {
   background-color: skyblue;
-  /* width: 190px;   */
+  width: 190px;
+  /* flex-grow: 1; */
+  /* flex-grow 나머지 영역을 차지 */
+    
+  
 }
 
 /* 슬로건 */
