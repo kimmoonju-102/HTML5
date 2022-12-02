@@ -34,33 +34,29 @@ body {
 .main {
   background-color:peru;
   height: 50vh;
-  /* display: flow-root;  */
-  padding: 0 15px;
-}
-
-.group {
-  margin: 0 15px;
-  float: left;
+  display: flex;
+  flex-direction: row; 
+  align-items: flex-start;
 }
 
 .group1 {
   background-color: blueviolet;
-  width: 250px;
+  /* width: 250px; */
 }
 
 .group2 {
   background-color: seagreen;
-  width: 380px;
+  /* width: 380px; */
 }
 
 .group3 {
   background-color: skyblue;
-  width: 190px;  
+  /* width: 190px;   */
 }
 
 /* 슬로건 */
 .slogan {
-  background-color:lavender;
+  background-color:forestgreen;
   height: 10vh;
 }
 /* 푸터 */
