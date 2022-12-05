@@ -1,11 +1,20 @@
 @import url(./normalize.css);
 @import url(./reset.css);
+@import url(./fontello.css);
 
 /* 기본스타일 */
-* , *::before, *::after{
-  box-sizing: border-box;
-
+*
+*::before
+*::after {
+  box-sizing: border-box; 
 }
+/* 앞으로 쓸 가상선택자 모두에 박스사이징 적용 */
+/* 가상요소에선 box-sizing: border-box 를 상속하지 못하므로 따로 선언해야함 */
+/* color:red -> 상속 가능 */
+/* box-sizing: border-box -> 상속 불가능 */ 
+/* * {box-sizing: border-box;} 이렇게 하면 안됌 */ 
+
+
 /* 본문 스타일 */
 body {
   background-color: rosybrown;
@@ -21,10 +30,57 @@ body {
 }
 /* 헤더 */
 .header {
-  background-color:skyblue;
+  background-color:#fff;
   padding: 0 30px;
   height: 15vh;
+  border-radius: 0 0 15px 15px;
 }
+
+.member {
+  background-color: pink;
+  display: flex;
+  flex-grow: row nowrap; 
+  /* row 방향으로 flex를 사용하면 공백문자 무시됨 */
+  justify-content: flex-end;
+}
+
+/* 겹침 Cascading */
+/* 우선순위 규칙 */
+/* li (Type Selector) 1점 */
+/* .first (Class Selector)  10점*/
+/* #item (Id Selector)  100점*/
+
+/* .member li::before {
+  content: ":" ;
+} */
+
+/* .member .first::before {
+  content: "";
+} */
+/* .member li:nth-child(2)::before {
+  content: "";
+} */
+/* !important -> 내가 먼저 우선으로 할거임 */
+/* ::before / ::before => first child */
+/* :after / ::after => last child */
+
+/* .member li:nth-child(n+2)::before {
+  content: ":";
+  background-color: skyblue;
+} */
+
+.member li::before {
+  /* content: '\e800';
+  font-family: "fontello"; */
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+}
+
 /* 비주얼 */
 .visual {
   background-color:navajowhite;
