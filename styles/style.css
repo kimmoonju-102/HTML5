@@ -1,11 +1,13 @@
 @import url(./normalize.css);
 @import url(./reset.css);
 
-/* 기본스타일 */
-* , *::before, *::after{
+/* 기본 스타일 */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-
 }
+
 /* 링크 스타일 */
 a {
   color: inherit;
@@ -14,25 +16,29 @@ a {
 
 /* 본문 스타일 */
 body {
-  color: #181818;
-  background-color: #ccc;
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  
+  color: #212121;
+  background: #ccc;
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
 /* 레이아웃 */
-.header, .visual, .main, .slogan, .footer-inner {
+.header,
+.visual,
+.main,
+.slogan,
+.footer-inner {
   width: 940px;
   margin: 0 auto;
-
 }
 
 /* 헤더 */
 .header {
-  background-color:#fff;
+  background: #fff;
   padding: 0 30px;
   height: 15vh;
-  /* 라운딩 처리 */
   border-radius: 0 0 15px 15px;
   position: relative;
 }
@@ -43,25 +49,29 @@ body {
   top: 45px;
   left: 60px;
 }
-/* 상위 컨테이닝 블록기준: position: static이 아닌경우 */
 
 /* 텍스트 링크 모음 */
 .member {
-  /* background-color: aqua; */
+  background-color: aqua;
   text-align: right;
   padding: 4px 0;
-  /* block안에 있는 inline 박스들 옮김 */
 }
 
 .member li {
   /* background-color: pink; */
   display: inline-block;
-
 }
+
 .member a {
   background-color: coral;
   padding: 6px 10px;
   display: inherit;
+  text-transform: uppercase;
+}
+
+/* 마지막 li 요소에 포함된 a 요소를 선택하여 오른쪽 padding 값을 0으로 재정의 하는 방법 */
+.member li:last-child a {
+  padding-right: 0;
 }
 
 .divider {
@@ -70,15 +80,14 @@ body {
 
 /* 비주얼 */
 .visual {
-  background-color:navajowhite;
+  background: orange;
   height: 10vh;
 }
-
 /* 메인 */
 .main {
-  background-color:peru;
+  background: lightgreen;
   height: 50vh;
-  /* display: flow-root;  */
+  display: flow-root;
   padding: 0 15px;
 }
 
@@ -88,32 +97,29 @@ body {
 }
 
 .group1 {
-  background-color: blueviolet;
+  background-color: violet;
   width: 250px;
 }
-
 .group2 {
-  background-color: seagreen;
+  background-color: salmon;
   width: 380px;
 }
-
 .group3 {
-  background-color: skyblue;
-  width: 190px;  
+  background-color: gold;
+  width: 190px;
 }
 
 /* 슬로건 */
 .slogan {
-  background-color:lavender;
+  background: skyblue;
   height: 10vh;
+  clear: both;
 }
-
 /* 푸터 */
 .footer {
-  background-color:lightseagreen;
+  background: gray;
 }
 .footer-inner {
+  background: silver;
   height: 15vh;
-  background-color: gainsboro;
-
 }
