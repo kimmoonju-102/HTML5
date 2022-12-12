@@ -173,8 +173,8 @@ body {
   /* header 기준으로 position을 주고 있음 */
   /* 그래서 기준을 따로 정해야함 */
   top: 47px;
-  padding: 4px 0;
   display: none;
+  padding: 4px 0;
 }
 
 .menu-html, 
@@ -324,6 +324,7 @@ body {
 
 .group2 {
   width: 380px;
+  height: 300px;
 }
 
 .group3 {
@@ -421,23 +422,27 @@ body {
 }
 
 .validation-list a {
-  display: block;
-  background:url("./images/validation_icon.png") no-repeat 25px 50%,  #ccc linear-gradient(to bottom, #ccc, #eee);
-  border: 2px solid #aaa;
-  padding: 8px 15px 8px 55px;
+  background: url("./images/validation_icon.png") no-repeat 25px 50%,
+    #ccc linear-gradient(to bottom, #ccc, #eee);
+  padding: 0 15px 0 55px;
   border-radius: 30px;
+  line-height: 30px;
+  border: 1px solid #aaa;
+  cursor: pointer;
+  display: block;
 }
 
 .validation-list a:hover,
 .validation-list a:focus{
   color: #f00;
 }
+
 /* 웹 관련 용어 */
 .term {
   margin-top: 20px;
-  padding: 10px 15px;
   border: 1px solid #aaa;
   border-radius: 5px;
+  padding: 10px 15px;
   background: #ccc linear-gradient(to bottom, #ccc, #eee);
 }
 
@@ -508,7 +513,7 @@ body {
 .form-group {
   /* flex-grow 속성 다시 알아보기 확대속성임. */
   flex-grow: 1;
-  /* lable, input, button을 위해 배치 display: flex; */
+  /* lable, input, button을 위해 배치 display: flex; flex 아이템들 */
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -525,7 +530,9 @@ body {
   border-radius: 3px;
   height: 24px;
   padding: 1px 1px 1px 5px;
+  /* 남은 영역을 늘리기위해 확대 flex-grow */
   flex-grow: 1;
+  /* 크로스브라우징이슈 해결하기 위해 min-width, width */
   min-width: 0;
   width: 100%;
 }
