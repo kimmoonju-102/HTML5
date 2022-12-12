@@ -506,10 +506,9 @@ body {
 }
 
 .form-group {
-  background-color: #e85e2c;
   /* flex-grow 속성 다시 알아보기 확대속성임. */
   flex-grow: 1;
-  /* lable, input을 위해 배치 display: flex; */
+  /* lable, input, button을 위해 배치 display: flex; */
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -517,9 +516,7 @@ body {
 }
 
 .form-group-label {
-  /* background-color: lime; */
-  /* 공백문자 처리 */
-  white-space: nowrap;
+  flex-shrink: 0;
   margin-right: 10px;
 }
 
@@ -529,12 +526,12 @@ body {
   height: 24px;
   padding: 1px 1px 1px 5px;
   flex-grow: 1;
-  /* min-width: 0;
-  max-width: 100%; */
+  min-width: 0;
+  width: 100%;
 }
 
 .search-button {
-  white-space: nowrap;
+  flex-shrink: 0;
   background-color: #000;
   color: #fff;
   height: 24px;
