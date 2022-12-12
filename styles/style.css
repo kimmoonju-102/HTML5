@@ -431,6 +431,65 @@ body {
 .validation-list a:focus{
   color: #f00;
 }
+/* 웹 관련 용어 */
+.term {
+  margin-top: 20px;
+  padding: 10px 15px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+}
+
+.term-title {
+  /* 1.5rem 동일 */
+  font-size: 15px; 
+  font-weight: 700;
+}
+
+.term-list {
+  margin-top: 10px;
+}
+
+.term-list div {
+  margin-top: 10px;
+  /* 부모영역이다. */
+  /* flow-root 독립적으로 렌더링 됨. */
+  display: flow-root;
+}
+
+.term-list-subject,
+.term-list-brief {
+  float: right;
+  width: 145px;
+}
+
+.term-list-subject {
+  color: #296897;
+  font-weight: 500;
+}
+
+.term-list-thumbnail {
+  float: left;
+}
+
+.term-list-thumbnail img {
+  /* img -> inline요소라 미묘하게 갭이 생김 그래서 초기화를 시키기위해 vertical-align 사용함 */
+  vertical-align: middle;
+}
+
+.term-list-brief {
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+.cross .term-list-subject,
+.cross .term-list-brief {
+  float: left;
+}
+
+.cross .term-list-thumbnail {
+  float: right;
+}
 
 /* 슬로건 */
 .slogan {
