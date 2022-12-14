@@ -2,17 +2,12 @@
 @import url(./reset.css);
 @import url(./fontello.css);
 
-/* 기본스타일 */
-*
-*::before
+/* 기본 스타일 */
+*,
+*::before,
 *::after {
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
-/* 앞으로 쓸 가상선택자 모두에 박스사이징 적용 */
-/* 가상요소에선 box-sizing: border-box 를 상속하지 못하므로 따로 선언해야함 */
-/* color:red -> 상속 가능 */
-/* box-sizing: border-box -> 상속 불가능 */ 
-/* * {box-sizing: border-box;} 이렇게 하면 안됌 */ 
 
 /* 링크 스타일 */
 a {
@@ -20,125 +15,147 @@ a {
   text-decoration: none;
 }
 
+html {
+  font-size: 10px;
+}
+
 /* 본문 스타일 */
 body {
   color: #212121;
-  background-color: #ccc;
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  
+  font-size: 1.4rem;
+  background: #ccc;
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
 /* 레이아웃 */
-.header, .visual, .main, .slogan, .footer-inner {
+.header,
+.visual,
+.main,
+.slogan,
+.footer-inner {
   width: 940px;
   margin: 0 auto;
-
 }
+
 /* 헤더 */
 .header {
-  background-color:#fff;
+  background: #fff;
   padding: 0 30px;
-  height: 15vh;
   border-radius: 0 0 15px 15px;
 }
 
 .member {
   background-color: pink;
-  display: flex;
-  flex-grow: row nowrap; 
-  /* row 방향으로 flex를 사용하면 공백문자 무시됨 */
-  justify-content: flex-end;
 }
 
-/* 겹침 Cascading */
-/* 우선순위 규칙 */
-/* li (Type Selector) 1점 */
-/* .first (Class Selector)  10점*/
-/* #item (Id Selector)  100점*/
-
-/* .member li::before {
-  content: ":" ;
-} */
-
-/* .member .first::before {
-  content: "";
-} */
-/* .member li:nth-child(2)::before {
-  content: "";
-} */
-/* !important -> 내가 먼저 우선으로 할거임 */
-/* ::before / ::before => first child */
-/* :after / ::after => last child */
-
-/* .member li:nth-child(n+2)::before {
-  content: ":";
-  background-color: skyblue;
-} */
-
-.member li::before {
-  /* content: '\e800'; */
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: .2em;
-  text-align: center;
-}
-
-.member a {
-  text-transform: uppercase;
-}
 /* 비주얼 */
 .visual {
-  background-color:navajowhite;
-  height: 10vh;
+  height: 120px;
 }
 /* 메인 */
 .main {
-  background-color:WhiteSmoke;
-  /* height: 50vh; */ 
-  min-height: 450px; 
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 30px;
+  background: #fff;
+  min-height: 450px;
+  display: flow-root;
+  padding: 30px 15px;
+}
+
+.group {
+  float: left;
+  margin: 0 15px;
 }
 
 .group1 {
-  background-color: blueviolet;
   width: 250px;
-  
 }
 
 .group2 {
-  background-color: seagreen;
   width: 380px;
-  
 }
-
 .group3 {
-  background-color: skyblue;
   width: 190px;
-  /* flex-grow: 1; */
-  /* flex-grow 나머지 영역을 차지 */
-    
-  
 }
 
+/* 신규 이벤트 및 관련 사이트 */
+.gradient-effect {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+
+}
+
+.text-xl {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.accent-color {
+  color: #a52a2a;
+}
+
+/* 인기 사이트 */
+/* .favorite {
+  .gradient-effect에 border값이랑 padding값 때문에 margin-top이 안먹는다.
+  margin-top: 20px;
+} */
+
+.margin-top-default {
+  margin-top: 20px;
+}
+
+.event-button-wrapper {
+  /* background-color: yellow; */
+  overflow: hidden;
+  /* height: 24px; */
+  /* padding: 4px; */
+  display: flex;
+  flex-flow: nowrap;
+  /* 가운데 정렬로 글자 안보이게 */
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.event-button {
+  width: 19px;
+  border:0;
+  height: 18px;
+  /* padding: 18px 0 0 0; */
+  padding: 0;
+  /* indent -> inline요소이다 */
+  /* text-indent: -9999px;  */
+  background: url("./images/back_forward.png") no-repeat;
+}
+
+.event-thumbnail, 
+.event-brief {
+  margin: 10px 0;
+}
+
+.event-button-next {
+  background-position: 100% 0;
+}
+
+.event-thumbnail img {
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #ccc;
+}
+
+.related {
+  margin-top: 10px;
+}
 /* 슬로건 */
 .slogan {
-  background-color:forestgreen;
-  height: 10vh;
+  background: skyblue;
+  clear: both;
 }
 /* 푸터 */
 .footer {
-  background-color:lightseagreen;
+  background: gray;
 }
 .footer-inner {
-  height: 15vh;
-  background-color: gainsboro;
-
+  background: silver;
 }
